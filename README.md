@@ -1,75 +1,101 @@
-# React + TypeScript + Vite
+# Job Tracker — React + TypeScript
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A single-user Job Tracker application that helps users organize job applications and track their application progress in one place.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Dashboard:** View total applications, interviews, offers, and rejected applications.
+- **Job Management:** Add, edit, and delete job applications.
+- **Search:** Search applications by company name or job position.
+- **Filter:** Filter applications by status.
+- **Sorting:** Sort applications by application date.
+- **Persistent Storage:** Save job application data in the browser using LocalStorage.
+- **Form Validation:** Validate required company and position fields.
+- **Responsive UI:** Organize job application information in a clean interface.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- Redux Toolkit
+- React Redux
+- React Router
+- Tailwind CSS / CSS
+- Vitest
+- React Testing Library
+- ESLint
+- LocalStorage
 
-## Expanding the ESLint configuration
+## Redux Toolkit Concepts
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This project demonstrates:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Redux Toolkit slices and reducers
+- Centralized state management
+- `createEntityAdapter` for normalized job data
+- Memoized selectors using `createSelector`
+- React Redux hooks
+- Component optimization using `React.memo` and `useCallback`
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Prerequisites
 
+- Node.js
+- npm
+- Git
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/m736/job-track/
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Move into the project folder:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+cd job-track
 ```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Available Scripts
+
+```bash
+npm run dev
+npm run build
+npm run lint
+npm run test
+```
+
+- `npm run dev` — Start the development server.
+- `npm run build` — Build the application for production.
+- `npm run lint` — Check code quality with ESLint.
+- `npm run test` — Run tests with Vitest.
+
+## Testing
+
+The project uses Vitest and React Testing Library to test application behavior, Redux logic, selectors, forms, and dashboard functionality.
+
+## Future Improvements
+
+- Add backend integration and user authentication.
+- Add cloud-based data storage.
+- Improve accessibility and expand test coverage.
+
+## Author
+
+Frontend Developer | React | TypeScript | Redux Toolkit
